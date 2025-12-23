@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Micro Habit Tracker</title>
+</head>
+<body>
+    <h1>Micro Habit Tracker</h1>
+
+    <ul>
+        {% for habit in habits %}
+        <li>
+            {{ habit.name }}
+            <a href="/toggle/{{ loop.index0 }}">
+                {{ "✔ Completed" if habit.done else "❌ Not Done" }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <h3>Today's Progress: {{ progress }}%</h3>
+</body>
+</html>
