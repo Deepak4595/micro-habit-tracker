@@ -1,5 +1,5 @@
-pipeline {
-    agent any
+pipeline { 
+    agent { label 'built-in' }
 
     stages {
         stage('Checkout Code') {
